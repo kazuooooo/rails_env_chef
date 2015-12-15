@@ -6,14 +6,18 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-# 必要なパッケージのインストール (yum等、何を使用するかは環境依存)
+
+# 必要なパッケージのインストール
 # http://docs.getchef.com/resource_package.html
-%w{git gcc openssl-devel readline-devel}.each do |pkg|
+%w{git gcc openssl-devel readline-devel nginx}.each do |pkg|
   package pkg do
     action :install
   end
 end
 
+# --------------------------------------------------------
+# install ruby by rbenv
+# --------------------------------------------------------
 # rbenvのダウンロード
 # http://docs.getchef.com/resource_git.html
 git "/usr/local/rbenv" do
@@ -56,3 +60,29 @@ bash "install-bundler" do
   code "source /etc/profile.d/rbenv.sh && rbenv global 2.2.2 && rbenv exec gem install bundler && rbenv rehash"
   action :run
 end
+
+# --------------------------------------------------------
+# nginx
+# --------------------------------------------------------
+service "nginx" do
+  # nginx がサポートしている機能を教えてあげます。
+  # restartとかできるよーという意味らしい。
+  supports status: true, restart: true, reload: true
+
+  # サーバーを有効にした上で、スタートします。
+  # 有効にしておけばマシン再起動時にも勝手にサーバーが起動します。
+  action [:enable, :start]
+end
+# ./site_cookbooks/templates/default/nginx.conf.erbを元にして
+# nginxの設定ファイルを決まったところに置くよという指示
+# Chefの規約にのおかげで置き場所のパスやテンプレートファイルは省略できている
+template "nginx.conf" do
+  # ownerとgroupはrootユーザーでパーミッションは644
+  owner "root"
+  group "root"
+  mode 0644
+
+  # この動作のあとでnginxを再起動してねという指示
+  notifies :reload, "service[nginx]"
+end
+

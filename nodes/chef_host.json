@@ -4,5 +4,8 @@
   ],
   "automatic": {
     "ipaddress": "chef_host"
+  },
+  "nginx": {
+    "port":80
   }
 }
