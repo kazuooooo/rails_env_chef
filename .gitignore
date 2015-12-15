@@ -33,7 +33,6 @@ Temporary Items
 
 ### ChefCookbook ###
 .vagrant
-/cookbooks
 
 # Bundler
 bin/*
