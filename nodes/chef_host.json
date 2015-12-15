@@ -1,0 +1,8 @@
+{
+  "run_list": [
+    "recipe[rails_env_cookbook]"
+  ],
+  "automatic": {
+    "ipaddress": "chef_host"
+  }
+}
