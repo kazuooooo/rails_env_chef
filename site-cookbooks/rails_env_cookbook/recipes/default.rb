@@ -9,7 +9,7 @@
 
 # 必要なパッケージのインストール
 # http://docs.getchef.com/resource_package.html
-%w{git gcc openssl-devel readline-devel nginx}.each do |pkg|
+%w{git gcc openssl-devel readline-devel}.each do |pkg|
   package pkg do
     action :install
   end
@@ -64,6 +64,10 @@ end
 # --------------------------------------------------------
 # nginx
 # --------------------------------------------------------
+package "nginx" do
+  action :install
+end
+
 service "nginx" do
   # nginx がサポートしている機能を教えてあげます。
   # restartとかできるよーという意味らしい。

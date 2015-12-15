@@ -1,5 +1,6 @@
 {
   "run_list": [
+    "yum",
     "recipe[rails_env_cookbook]"
   ],
   "automatic": {
