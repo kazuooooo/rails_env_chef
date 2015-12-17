@@ -1,9 +1,8 @@
 {
-  "run_list": [
-    "nginx",
-    "recipe[rails_env_cookbook]"
-  ],
-  "automatic": {
-    "ipaddress": "chef_host"
-  }
+    "run_list":[
+        "nginx",
+        "sqlite",
+        "ruby_rbenv",
+        "my_cookbook"
+    ]
 }

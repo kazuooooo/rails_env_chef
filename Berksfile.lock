@@ -1,11 +1,19 @@
 DEPENDENCIES
+  bundler
   nginx
+  ruby_rbenv
+  rubygems
+  sqlite
 
 GRAPH
   apt (2.9.2)
   bluepill (2.4.1)
     rsyslog (~> 2.0)
   build-essential (2.2.4)
+  bundler (0.2.0)
+    rubygems (>= 0.0.0)
+  java (1.36.0)
+    apt (>= 0.0.0)
   nginx (2.7.6)
     apt (~> 2.2)
     bluepill (~> 2.3)
@@ -16,8 +24,14 @@ GRAPH
   ohai (2.0.4)
   packagecloud (0.1.1)
   rsyslog (2.2.0)
+  ruby_build (0.8.0)
+  ruby_rbenv (1.0.1)
+    java (> 1.4.0)
+    ruby_build (>= 0.0.0)
+  rubygems (0.3.0)
   runit (1.7.4)
     packagecloud (>= 0.0.0)
+  sqlite (1.1.2)
   yum (3.8.2)
   yum-epel (0.6.5)
     yum (~> 3.2)

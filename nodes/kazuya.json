@@ -1,9 +1,0 @@
-{
-  "run_list": [
-    "nginx",
-    "recipe[rails_env_cookbook]"
-  ],
-  "automatic": {
-    "ipaddress": "chef_host"
-  }
-}
