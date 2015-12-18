@@ -2,7 +2,6 @@
     "run_list":[
         "nginx",
         "sqlite",
-        "ruby_rbenv",
         "my_cookbook"
     ]
 }

@@ -9,48 +9,42 @@
 
 # 必要なパッケージのインストール
 # http://docs.getchef.com/resource_package.html
-# %w{git gcc openssl-devel readline-devel sqlite-devel gcc-c++}.each do |pkg|
-#   package pkg do
-#     action :install
-#   end
-# end
+%w{git gcc openssl-devel readline-devel sqlite-devel gcc-c++}.each do |pkg|
+  package pkg do
+    action :install
+  end
+end
 
-# # --------------------------------------------------------
-# # install ruby by rbenv
-# # --------------------------------------------------------
-# # rbenvのダウンロード
-# # http://docs.getchef.com/resource_git.html
-# git "/usr/local/rbenv" do
-#   repository "https://github.com/sstephenson/rbenv.git"
-#   revision "master"
-#   action :sync
-# end
+# --------------------------------------------------------
+# install ruby by rbenv
+# --------------------------------------------------------
+# rbenvのダウンロード
+# http://docs.getchef.com/resource_git.html
+git "/usr/local/rbenv" do
+  repository "https://github.com/sstephenson/rbenv.git"
+  revision "master"
+  action :sync
+end
 
-# # プラグインディレクトリの作成
-# # http://docs.getchef.com/resource_directory.html
-# directory "/usr/local/rbenv/plugins" do
-#   action :create
-# end
+# プラグインディレクトリの作成
+# http://docs.getchef.com/resource_directory.html
+directory "/usr/local/rbenv/plugins" do
+  action :create
+end
 
-# # ruby-buildプラグインのダウンロード
-# git "/usr/local/rbenv/plugins/ruby-build" do
-#   repository "https://github.com/sstephenson/ruby-build.git"
-#   revision "master"
-#   action :sync
-# end
+# ruby-buildプラグインのダウンロード
+git "/usr/local/rbenv/plugins/ruby-build" do
+  repository "https://github.com/sstephenson/ruby-build.git"
+  revision "master"
+  action :sync
+end
 
-# # bashの環境設定を行うシェルスクリプトの設置 (先程作成したテンプレートファイルを利用)
-# # http://docs.getchef.com/resource_template.html
-# template "/etc/profile.d/rbenv.sh" do
-#   source "rbenv.sh.erb"
-#   action :create
-# end
-
-# template "/var/www/nginx-default/index.html" do
-#   source "index.html"
-#   action :create
-# end
-
+# bashの環境設定を行うシェルスクリプトの設置 (先程作成したテンプレートファイルを利用)
+# http://docs.getchef.com/resource_template.html
+template "/etc/profile.d/rbenv.sh" do
+  source "rbenv.sh.erb"
+  action :create
+end
 
 # rubyのインストール
 # http://docs.getchef.com/resource_bash.html
@@ -83,4 +77,16 @@ template "nginx.conf" do
   group "root"
   mode 0644
   notifies :reload, 'service[nginx]'
+end
+
+# secrets.shを作成
+template "/etc/profile.d/secrets.sh" do
+  source "secrets.sh.erb"
+  action :create
+end
+
+# secrets.shを読み込み
+bash "load secrets.sh" do
+  code "source /etc/profile.d/secrets.sh"
+  action :run
 end
