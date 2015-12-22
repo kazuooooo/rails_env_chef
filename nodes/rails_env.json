@@ -1,0 +1,17 @@
+{
+    "rbenv":{
+        "root": "/opt/rbenv"
+    },
+    "ruby_build":{
+        "prefix": "/opt/rbenv/plugins/ruby_build",
+        "bin_path": "/opt/rbenv/plugins/ruby_build/bin"
+    },
+    "run_list":[
+        "rbenv",
+        "ruby_build",
+        "nginx",
+        "sqlite",
+        "rbenv-install-rubies",
+        "my_cookbook"
+    ]
+}

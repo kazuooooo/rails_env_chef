@@ -1,8 +1,10 @@
 DEPENDENCIES
-  bundler
+  my_cookbook
+    path: site-cookbooks/my_cookbook
   nginx
-  ruby_rbenv
-  rubygems
+  rbenv
+  rbenv-install-rubies (~> 0.2.1)
+  ruby_build
   sqlite
 
 GRAPH
@@ -10,10 +12,14 @@ GRAPH
   bluepill (2.4.1)
     rsyslog (~> 2.0)
   build-essential (2.2.4)
-  bundler (0.2.0)
-    rubygems (>= 0.0.0)
-  java (1.36.0)
-    apt (>= 0.0.0)
+  chef_handler (1.2.0)
+  dmg (2.3.0)
+  git (4.3.5)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  my_cookbook (0.1.0)
   nginx (2.7.6)
     apt (~> 2.2)
     bluepill (~> 2.3)
@@ -23,15 +29,20 @@ GRAPH
     yum-epel (~> 0.3)
   ohai (2.0.4)
   packagecloud (0.1.1)
+  rbenv (1.7.1)
+    apt (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    git (>= 0.0.0)
+    ohai (>= 1.1)
+  rbenv-install-rubies (0.2.1)
+    rbenv (>= 0.0.0)
   rsyslog (2.2.0)
   ruby_build (0.8.0)
-  ruby_rbenv (1.0.1)
-    java (> 1.4.0)
-    ruby_build (>= 0.0.0)
-  rubygems (0.3.0)
   runit (1.7.4)
     packagecloud (>= 0.0.0)
   sqlite (1.1.2)
+  windows (1.38.4)
+    chef_handler (>= 0.0.0)
   yum (3.8.2)
   yum-epel (0.6.5)
     yum (~> 3.2)
