@@ -1,0 +1,9 @@
+{
+  "id": "hoge",
+  "naisyo_value": {
+    "encrypted_data": "vF3/bFxnujpace/4MCyq1Z/7C0eSUMV8/GKAYlAT0aE=\n",
+    "iv": "hIZhzMXA0SCcAxlwWvOoWg==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

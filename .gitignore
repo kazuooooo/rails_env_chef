@@ -31,3 +31,4 @@ bin/*
 .kitchen.local.yml
 /cookbooks/
 /vendor
+.secret/

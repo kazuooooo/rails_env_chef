@@ -1,0 +1,9 @@
+{
+  "id": "bar",
+  "naisyo_value": {
+    "encrypted_data": "6onz1UdnlkDVBFNZZu6s5LN4tH4g99H8v2stCkoYl/g=\n",
+    "iv": "P4eRZw8mLOiX4ybLHh7Ejw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

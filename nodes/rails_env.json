@@ -12,6 +12,7 @@
         "nginx",
         "sqlite",
         "rbenv-install-rubies",
-        "my_cookbook"
+        "recipe[my_cookbook::nginx_conf]",
+        "recipe[my_cookbook::secrets]"
     ]
 }
