@@ -13,9 +13,12 @@
         "sqlite",
         "rbenv-install-rubies",
         "recipe[my_cookbook::nginx_conf]",
-        "recipe[my_cookbook::secrets]"
+        "recipe[my_cookbook::secrets]",
+        "recipe[my_cookbook::create_user]"
     ],
     "nginx":{
-        "dir": "/etc/nginx"
+        "dir": "/etc/nginx",
+        "user": "vagrant",
+        "log_dir": "/var/log/nginx"
     }
 }
