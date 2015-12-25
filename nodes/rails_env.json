@@ -14,5 +14,8 @@
         "rbenv-install-rubies",
         "recipe[my_cookbook::nginx_conf]",
         "recipe[my_cookbook::secrets]"
-    ]
+    ],
+    "nginx":{
+        "dir": "/etc/nginx"
+    }
 }
