@@ -5,6 +5,7 @@ DEPENDENCIES
   rbenv
   rbenv-install-rubies (~> 0.2.1)
   ruby_build
+  simple_iptables (~> 0.7.3)
   sqlite
 
 GRAPH
@@ -40,6 +41,7 @@ GRAPH
   ruby_build (0.8.0)
   runit (1.7.4)
     packagecloud (>= 0.0.0)
+  simple_iptables (0.7.3)
   sqlite (1.1.2)
   windows (1.38.4)
     chef_handler (>= 0.0.0)
