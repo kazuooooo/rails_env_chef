@@ -15,10 +15,12 @@
         "recipe[my_cookbook::nginx_conf]",
         "recipe[my_cookbook::secrets]",
         "recipe[my_cookbook::create_user]"
+
     ],
     "nginx":{
         "dir": "/etc/nginx",
-        "user": "vagrant",
-        "log_dir": "/var/log/nginx"
+        "pid": "/run/nginx.pid",
+        "default_root": "/home/vagrant/app_root/current",
+        "user": "vagrant"
     }
 }
