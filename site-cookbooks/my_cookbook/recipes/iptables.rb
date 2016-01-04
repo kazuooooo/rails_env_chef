@@ -13,7 +13,7 @@ end
 
 # すでに接続済みのものは許可
 simple_iptables_rule "established" do
-  rule "-m conntrack --csstate ESTABLISHED,RELATED"
+  rule "-m conntrack --ctstate ESTABLISHED,RELATED"
   jump "ACCEPT"
 end
 
