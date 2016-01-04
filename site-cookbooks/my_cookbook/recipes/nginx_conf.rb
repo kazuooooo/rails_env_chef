@@ -2,7 +2,7 @@ nginx_site 'default' do
   enable false
 end
 
-template "#{node["nginx"]["dir"]}/sites-available/conf" do
+template "#{node["nginx"]["dir"]}/sites-available/site_practice" do
   source "nginx.conf.erb"
   mode 0644
   owner "vagrant"
@@ -10,4 +10,4 @@ template "#{node["nginx"]["dir"]}/sites-available/conf" do
   notifies :restart, 'service[nginx]'
 end
 
-nginx_site "conf"
+nginx_site "site_practice"
