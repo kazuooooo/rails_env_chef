@@ -1,10 +1,11 @@
 require_relative '../spec_helper'
-require 'chefspec'
 
 describe 'my_cookbook::nginx_conf' do
   let(:chef_run) do
+    stub_command("which nginx").and_return('/usr/local/bin/nginx')
     ChefSpec::SoloRunner.new do |node|
-      node.set["nginx"]["port"] = "8080"
+      node.set["nginx"]["dir"] = "/etc/nginx"
+      #  node.set["nginx"]["port"] = "8080"
     end.converge(described_recipe)
   end
 
@@ -12,7 +13,4 @@ describe 'my_cookbook::nginx_conf' do
     expect(chef_run).to create_template("/etc/nginx/sites-available/site_practice")
   end
 
-  it "changes port to 8080 in /etc/nginx/sites-available/site_practice" do
-    expect(chef_run).to render_file("/etc/nginx/sites-available/site_practice").with_content(/[\s]+listen[\s]+8080;/)
-  end
 end

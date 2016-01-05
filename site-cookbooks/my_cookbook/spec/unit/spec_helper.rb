@@ -6,9 +6,7 @@ require 'chefspec'
 
 RSpec.configure do |config|
   # Specify the path for Chef Solo to find cookbooks
-  config.cookbook_path = 'cookbooks'
-  config.cookbook_path = 'site-cookbooks'
-
+  config.cookbook_path = ['cookbooks','site-cookbooks']
   # Specify the path for Chef Solo to find roles
   # config.role_path = '/var/roles'
 
