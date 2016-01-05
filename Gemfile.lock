@@ -31,6 +31,7 @@ GEM
     buff-shell_out (0.2.0)
       buff-ruby_engine (~> 0.1.0)
     builder (3.2.2)
+    byebug (8.2.1)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     celluloid-io (0.16.2)
@@ -140,6 +141,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
+      pry (~> 0.10)
     rack (1.6.4)
     rake (10.4.2)
     retryable (2.0.3)
@@ -226,6 +230,7 @@ DEPENDENCIES
   knife-solo
   knife-solo_data_bag
   knife-spec
+  pry-byebug
   serverspec
   test-kitchen
 
