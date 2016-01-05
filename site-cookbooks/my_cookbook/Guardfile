@@ -3,3 +3,7 @@ guard :rspec, cmd: 'bundle exec rspec -I spec/unit --format Fuubar' do
   watch(%r{^(libraries|providers|recipes|resources)/(.+)\.rb$}) { |m| "spec/unit/#{m[1]}/#{m[2]}_spec.rb" }
   watch('spec/unit/spec_helper.rb') { 'spec/unit' }
 end
+
+guard :rspec, cmd: 'bundle _1.10.5_ exec rake spec' do
+  watch(%r{^spec/integration/.+_spec\.rb$})
+end
