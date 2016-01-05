@@ -6,8 +6,16 @@ gem "chef"
 gem "knife-solo"
 gem "berkshelf"
 gem "knife-solo_data_bag"
-gem "chefspec"
-gem "knife-spec"
-gem "serverspec"
-gem "test-kitchen"
-gem "pry-byebug"
+
+group :test do
+  gem "chefspec"
+  gem "knife-spec"
+  gem "serverspec"
+  gem "test-kitchen"
+  gem "guard-rspec"
+  gem "fuubar"
+end
+
+group :development do
+  gem "pry-byebug"
+end

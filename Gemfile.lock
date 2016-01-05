@@ -88,6 +88,24 @@ GEM
     ffi (1.9.10)
     ffi-yajl (2.2.2)
       libyajl2 (~> 1.2)
+    formatador (0.2.5)
+    fuubar (2.0.0)
+      rspec (~> 3.0)
+      ruby-progressbar (~> 1.4)
+    guard (2.13.0)
+      formatador (>= 0.2.4)
+      listen (>= 2.7, <= 4.0)
+      lumberjack (~> 1.0)
+      nenv (~> 0.1)
+      notiffany (~> 0.0)
+      pry (>= 0.9.12)
+      shellany (~> 0.0)
+      thor (>= 0.18.1)
+    guard-compat (1.2.1)
+    guard-rspec (4.6.4)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
     hashie (3.4.3)
     highline (1.7.8)
     hitimes (1.2.3)
@@ -102,6 +120,10 @@ GEM
     knife-spec (1.0.0)
       chef
     libyajl2 (1.2.0)
+    listen (3.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+    lumberjack (1.0.10)
     method_source (0.8.2)
     minitar (0.5.4)
     mixlib-authentication (1.3.0)
@@ -112,6 +134,7 @@ GEM
     mixlib-shellout (2.2.5)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+    nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -122,6 +145,9 @@ GEM
       net-ssh-gateway (>= 1.2.0)
     net-telnet (0.1.1)
     nio4r (1.1.1)
+    notiffany (0.0.8)
+      nenv (~> 0.1)
+      shellany (~> 0.0)
     octokit (3.8.0)
       sawyer (~> 0.6.0, >= 0.5.3)
     ohai (8.8.1)
@@ -146,6 +172,9 @@ GEM
       pry (~> 0.10)
     rack (1.6.4)
     rake (10.4.2)
+    rb-fsevent (0.9.7)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
     retryable (2.0.3)
     ridley (4.3.2)
       addressable
@@ -183,6 +212,7 @@ GEM
     rspec_junit_formatter (0.2.3)
       builder (< 4)
       rspec-core (>= 2, < 4, != 2.12.0)
+    ruby-progressbar (1.7.5)
     safe_yaml (1.0.4)
     sawyer (0.6.0)
       addressable (~> 2.3.5)
@@ -194,6 +224,7 @@ GEM
       rspec-its
       specinfra (~> 2.46)
     sfl (2.2)
+    shellany (0.0.1)
     slop (3.6.0)
     solve (1.2.1)
       dep_selector (~> 1.0)
@@ -227,6 +258,8 @@ DEPENDENCIES
   berkshelf
   chef
   chefspec
+  fuubar
+  guard-rspec
   knife-solo
   knife-solo_data_bag
   knife-spec
