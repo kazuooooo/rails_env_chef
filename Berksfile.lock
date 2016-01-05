@@ -1,6 +1,4 @@
 DEPENDENCIES
-  my_cookbook
-    path: site-cookbooks/my_cookbook
   nginx
   rbenv
   rbenv-install-rubies (~> 0.2.1)
@@ -20,8 +18,6 @@ GRAPH
     dmg (>= 0.0.0)
     windows (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  my_cookbook (0.1.0)
-    simple_iptables (>= 0.0.0)
   nginx (2.7.6)
     apt (~> 2.2)
     bluepill (~> 2.3)
