@@ -14,6 +14,8 @@ group :test do
   gem "test-kitchen"
   gem "guard-rspec"
   gem "fuubar"
+  gem 'kitchen-vagrant'
+  gem 'kitchen-verifier-shell'
 end
 
 group :development do

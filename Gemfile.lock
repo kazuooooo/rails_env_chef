@@ -112,6 +112,10 @@ GEM
     httpclient (2.6.0.1)
     ipaddress (0.8.0)
     json (1.8.3)
+    kitchen-vagrant (0.19.0)
+      test-kitchen (~> 1.4)
+    kitchen-verifier-shell (0.2.0)
+      test-kitchen (~> 1.4)
     knife-solo (0.5.1)
       chef (>= 10.20)
       erubis (~> 2.7.0)
@@ -260,6 +264,8 @@ DEPENDENCIES
   chefspec
   fuubar
   guard-rspec
+  kitchen-vagrant
+  kitchen-verifier-shell
   knife-solo
   knife-solo_data_bag
   knife-spec
