@@ -66,3 +66,24 @@ describe 'rbenv' do
     its(:stdout) {should match /2\.2\.4/}
   end
 end
+
+describe 'nginx' do
+  describe package('nginx') do
+    it {should be_installed}
+  end
+
+  describe process('nginx') do
+    it {should be_enabled}
+    it {should be_running}
+  end
+end
+
+describe 'unicorn' do
+  describe process('unicorn') do
+    it {should be_enabled}
+  end
+
+  describe file('/home/vagrant/app_root/current/tmp/unicorn.sock') do
+    it { should be_socket }
+  end
+end
